@@ -40,3 +40,9 @@ This is a backend project
 <!-- for that npm i dotenv & goto package.json  -->
 <!-- and add (-r dotenv/config --experimental-json-modules) in dev script like --> 
 <!-- to load directly("dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"") -->
+
+<!-- goto src/app.js-->
+<!-- write express app and export it -->
+<!-- goto src/index.js-->
+<!-- connectDB ehich returns promise  -->
+<!-- make a .then & .catch chain & in .then make express app listen and catch app error via app.on -->
