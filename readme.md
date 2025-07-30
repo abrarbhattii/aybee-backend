@@ -21,4 +21,24 @@ This is a backend project
 <!-- added script ("dev": "nodemon src/index.js") -->
 <!-- made it modular ("type": "module") -->
 
+<!-- mogodb atlas > account > cluster > user > network acces > connection string -->
 
+<!-- .env file > add PORT > add mongoDb_url -->
+
+<!-- constants.js file in src > add (export const DB_NAME = "videotube";) -->
+
+<!-- npm i mongoose express dotenv -->
+
+<!-- notes for database connection-->
+<!-- 1. wrap in try catch or promise -->
+<!-- 2. Database is always in another continent -->
+
+
+<!-- make a connection i src/ index.js -->
+<!-- or -->
+<!-- make a connction in src/db/index.js am
+nd export it but use dotenv-->
+<!-- for that goto package.json and add -r dotenv/config in dev script like
+ -->
+<!-- to load directly("dev": "nodemon -r dotenv/config src/index.js")
+ -->
