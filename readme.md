@@ -46,3 +46,8 @@ This is a backend project
 <!-- goto src/index.js-->
 <!-- connectDB ehich returns promise  -->
 <!-- make a .then & .catch chain & in .then make express app listen and catch app error via app.on -->
+
+<!-- use app.use when middleware or configuration is required -->
+
+<!-- npm i cookie-parser cors -->
+<!-- import them in app.js & make configuration -->
