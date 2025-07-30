@@ -34,11 +34,8 @@ This is a backend project
 <!-- 2. Database is always in another continent -->
 
 
-<!-- make a connection i src/ index.js -->
+<!-- make a connection in src/ index.js -->
 <!-- or -->
-<!-- make a connction in src/db/index.js am
-nd export it but use dotenv-->
-<!-- for that goto package.json and add -r dotenv/config in dev script like
- -->
-<!-- to load directly("dev": "nodemon -r dotenv/config src/index.js")
- -->
+<!-- make a connction in src/db/index.js and export it but use dotenv -->
+<!-- for that goto package.json and add (-r dotenv/config --experimental-json-modules) in dev script like -->
+<!-- to load directly("dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"") -->
