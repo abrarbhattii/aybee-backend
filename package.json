@@ -1,0 +1,17 @@
+{
+  "name": "aybee-backend",
+  "version": "1.0.0",
+  "description": "backend with express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "javaScript",
+    "backend",
+    "express",
+    "node"
+  ],
+  "author": "prof.aybee",
+  "license": "ISC"
+}
