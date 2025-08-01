@@ -51,3 +51,18 @@ This is a backend project
 
 <!-- npm i cookie-parser cors -->
 <!-- import them in app.js & make configuration -->
+
+<!-- make an asyncHandler wrapper/helper/utility method for connectDB to avoid repetition -->
+<!-- make an ApiError class utility for customized errors -->
+<!-- make an Apiresponse class utility for response -->
+
+<!--  Middleware in Express  -->
+<!-- it is a function that gets executed between  -->
+<!-- the request coming in (from the client)  -->
+<!-- and the response going out (from the server). -->
+
+<!-- Informational responses (100 – 199) -->
+<!-- Successful responses (200 – 299) -->
+<!-- Redirection messages (300 – 399) -->
+<!-- Client error responses (400 – 499) -->
+<!-- Server error responses (500 – 599) -->
