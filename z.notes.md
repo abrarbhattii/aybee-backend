@@ -159,3 +159,11 @@ const decoded = verifyToken(token, secret);  // gives the payload if signature i
 
 <!-- in order to chnage remote origin in local project if anything is changed at remote, run this command -->
 <!-- git remote set-url origin https://github.com/NEW_USERNAME/REPO_NAME.git -->
+
+<!-- $ git remote add origin https://github.com/OWNER/REPOSITORY.git -->
+<!-- # Set a new remote -->
+
+<!-- $ git remote -v -->
+<!-- # Verify new remote -->
+<!-- > origin  https://github.com/OWNER/REPOSITORY.git (fetch) -->
+<!-- > origin  https://github.com/OWNER/REPOSITORY.git (push) -->
