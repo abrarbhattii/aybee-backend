@@ -67,10 +67,10 @@
 <!-- BSON, which stands for Binary JSON, is a binary-encoded serialization of JSON-like documents -->
 <!-- Unlike JSON, which is text-based, BSON uses a binary format, making it more space-efficient and faster to parse. -->
 
-<!--  BSON includes data types not found in JSON, such as: 
-Dates: For storing date and time information. 
-Binary Data: For storing arbitrary binary data, like images or files. 
-Other Data Types: BSON also includes support for integers (64-bit and 32-bit), doubles, and more.  -->
+<!-- BSON includes data types not found in JSON, such as:  -->
+<!-- Dates: For storing date and time information.  -->
+<!-- Binary Data: For storing arbitrary binary data, like images or files.  -->
+<!-- Other Data Types: BSON also includes support for integers (64-bit and 32-bit), doubles, and more.  -->
 
 <!-- make an index: true to make a field searchable in any database speciallly mongoDB -->
 
