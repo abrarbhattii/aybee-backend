@@ -156,3 +156,6 @@ function verifyToken(token, secret) {
 const secret = 'mySuperSecretKey';
 const token = generateToken({ _id: "123", role: "admin" }, secret);
 const decoded = verifyToken(token, secret);  // gives the payload if signature is valid
+
+<!-- in order to chnage remote origin in local project if anything is changed at remote, run this command -->
+<!-- git remote set-url origin https://github.com/NEW_USERNAME/REPO_NAME.git -->
