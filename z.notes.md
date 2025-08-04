@@ -167,3 +167,73 @@ const decoded = verifyToken(token, secret);  // gives the payload if signature i
 <!-- # Verify new remote -->
 <!-- > origin  https://github.com/OWNER/REPOSITORY.git (fetch) -->
 <!-- > origin  https://github.com/OWNER/REPOSITORY.git (push) -->
+
+<!-- fileupload -->
+<!-- npm i cloudinary multer -->
+
+<!-- add util cloudinary.js -->
+<!-- in which impoert v2 as clodinary & fs from nodejs -->
+<!-- set env variables for api key, api secret cloudname -->
+<!-- cofigure cloudinary upload local file-->
+
+<!-- write multer middleware -->
+<!-- import & store in diskstorage -->
+<!-- read multer github redme docs -->
+<!-- multer is used in Node.js + Express apps to handle file uploads, -->
+<!-- especially when form data includes files like imgs, PDFs, vids, docs. -->
+<!-- it stores files locally in disk or memory storage -->
+
+<!-- How to Handle File Uploads Without Multer -->
+<!-- We’ll do this using: -->
+<!-- Core Node.js modules: http, fs, and path -->
+<!-- No Express (or minimal use) -->
+<!-- No external libraries -->
+<!-- 1. Create a Simple HTTP Server That Accepts File Upload -->
+
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
+
+http.createServer((req, res) => {
+  if (req.method === 'POST' && req.url === '/upload') {
+    const boundary = req.headers['content-type'].split('boundary=')[1];
+    let rawData = Buffer.alloc(0);
+
+    req.on('data', chunk => {
+      rawData = Buffer.concat([rawData, chunk]);
+    });
+
+    req.on('end', () => {
+      const parts = rawData.toString().split(`--${boundary}`);
+      const filePart = parts.find(part => part.includes('filename='));
+      
+      if (!filePart) {
+        res.writeHead(400);
+        return res.end('No file uploaded');
+      }
+
+      const match = filePart.match(/filename="(.+?)"/);
+      const filename = match ? match[1] : 'uploaded_file';
+
+      const fileDataStart = filePart.indexOf('\r\n\r\n') + 4;
+      const fileDataEnd = filePart.lastIndexOf('\r\n');
+      const fileData = filePart.slice(fileDataStart, fileDataEnd);
+
+      fs.writeFileSync(path.join(__dirname, filename), fileData, 'binary');
+
+      res.writeHead(200);
+      res.end('File uploaded successfully!');
+    });
+  } else {
+    // Simple HTML form
+    res.writeHead(200, { 'Content-Type': 'text/html' });
+    res.end(`
+      <form method="POST" action="/upload" enctype="multipart/form-data">
+        <input type="file" name="file"><br>
+        <button type="submit">Upload</button>
+      </form>
+    `);
+  }
+}).listen(3000, () => {
+  console.log('Server running at http://localhost:3000');
+});
