@@ -14,7 +14,7 @@
 //     }
 // }
 
-import { Promise } from "mongoose"
+import Promise from "mongoose"
 
 // In JavaScript, functions can be called with fewer arguments 
 // than the declared args, missing arguments will be undefined.
@@ -27,10 +27,9 @@ const asyncHandler = (requestHandler) => {
     }
 }
 
-// above methods duplicate
+// above method's duplicate
 // const asyncHandler = (requestHandler) => (req, res, next) =>
-//   Promise.resolve(requestHandler(req, res, next)).catch(next);
-
+// Promise.resolve(requestHandler(req, res, next)).catch(next);
 
 export {asyncHandler}
 

@@ -237,3 +237,21 @@ http.createServer((req, res) => {
 }).listen(3000, () => {
   console.log('Server running at http://localhost:3000');
 });
+
+<!-- add user.controller.js controller-->
+<!-- import asynHandler -->
+<!-- create registerUser mtehod and export -->
+
+<!-- add user.routes.js router -->
+<!-- import Router from express and creater router & export -->
+
+<!-- then in app.js import the router -->
+<!-- and declare the router via app.use -->
+<!-- app.use("/api/v1/users", userRouter) -->
+
+<!-- then in user.routes.js write the following router before export -->
+<!-- router.route("/register").post(registerUser) -->
+
+<!-- unnammed import like this in commonJS module-->
+<!-- import Promise from "mongoose" -->
+
