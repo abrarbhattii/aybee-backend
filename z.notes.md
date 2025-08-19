@@ -240,7 +240,7 @@ http.createServer((req, res) => {
 
 <!-- add user.controller.js controller-->
 <!-- import asynHandler -->
-<!-- create registerUser mtehod and export -->
+<!-- create registerUser method and export -->
 
 <!-- add user.routes.js router -->
 <!-- import Router from express and creater router & export -->
@@ -252,6 +252,32 @@ http.createServer((req, res) => {
 <!-- then in user.routes.js write the following router before export -->
 <!-- router.route("/register").post(registerUser) -->
 
-<!-- unnammed import like this in commonJS module-->
-<!-- import Promise from "mongoose" -->
+<!-- now hit this /register router vai postman -->
+<!-- for that get user date from req.body in user.controller -->
+<!-- also use middleware in routes for storing files data -->
 
+<!-- & use multer.middleware in user.routes -->
+<!-- import upload from multer.middleware -->
+<!-- and use upload middlware before rgistering the user -->
+<!-- like this => upload.fields([{},{}]) --> 
+
+
+<!-- now write this algorithm for user.controller below -->
+<!-->
+<!-- // 1. get user detail from frontend/postman -->
+<!-- // 2. validation - not empty -->
+<!-- // 3. check if already exists (via email/username) -->
+<!-- // 4. check for images, check for avatar  -->
+<!-- // 5. if exists upload them to cloudinary -->
+<!-- //    get url from cloudinary response returned -->
+<!-- //    avatar upload to cloudinary via multer check -->
+<!-- // 6. create user object to store in nosql db  -->
+<!-- //    create db entry / creation call -->
+<!-- // 7. remove password & refresh token field from response -->
+<!-- // 8. check for user creation -->
+<!-- // 9. return response -->
+<!-- for that follwoing imports are required -->
+<!-- import { ApiError } from "../utils/apiError.js"; -->
+<!-- import { User } from "../models/user.model.js"; -->
+<!-- import { uploadOnCloudinary } from "../utils/cloudinary.js"; -->
+<!-- import { ApiResponse } from "../utils/ApiResponse.js"; -->

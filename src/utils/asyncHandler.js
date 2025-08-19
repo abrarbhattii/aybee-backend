@@ -14,8 +14,6 @@
 //     }
 // }
 
-import Promise from "mongoose"
-
 // In JavaScript, functions can be called with fewer arguments 
 // than the declared args, missing arguments will be undefined.
 
