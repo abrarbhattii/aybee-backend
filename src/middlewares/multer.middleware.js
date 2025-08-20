@@ -1,5 +1,7 @@
 import multer from "multer";
 
+// diskStorage means uploaded files are 
+// stored on your server’s filesystem
 const storage = multer.diskStorage(
     {
         destination: function (req, file, cb) {

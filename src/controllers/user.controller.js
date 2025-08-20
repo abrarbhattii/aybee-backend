@@ -28,6 +28,9 @@ const registerUser = asyncHandler(async (req, res) => {
     const {username, fullname, email, password} = req.body
     console.log("username:", username, ", fullname:", fullname,", email:", email, ", password:", password);
 
+    console.log(req)
+    console.log(req.body)
+
     // 2. validation
     if ( 
         [username, fullname, email, password]
@@ -45,7 +48,7 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
     // 3. check if already exists (via email/username)
-    const existedUser = User.findOne({
+    const existedUser = await User.findOne({
         // operators with $ sign, $and, $or $comment etc
         $or: [{ username }, { email }]
     })
@@ -57,8 +60,20 @@ const registerUser = asyncHandler(async (req, res) => {
     // 4. check for images, check for avatar 
     // multer gives access to files via req.files
     // middleware adds more fields to request i.e, req
+    
     const avatarLocalPath = req.files?.avatar[0]?.path;
-    const coverImageLocalPath = req.files?.coverImage[0]?.path;
+
+    // it will give error due to ?. if its not provided in form
+    // const coverImageLocalPath = req.files?.coverImage[0]?.path;
+    let coverImageLocalPath;
+    if (req.files && Array.isArray(req.files.coverImage) && req.files.coverImage.length > 0) {
+        coverImageLocalPath = req.files.coverImage[0].path;
+    }
+
+
+    console.log(req.files)
+    console.log(req.files?.avatar[0])
+    console.log(req.files?.avatar[0]?.path)
 
     if (!avatarLocalPath) {
         throw new ApiError(400, "avatar is required")
@@ -68,7 +83,11 @@ const registerUser = asyncHandler(async (req, res) => {
     //    get url from cloudinary response returned
     //    check avatar upload to cloudinary via multer 
     const avatar = await uploadOnCloudinary(avatarLocalPath);
+    // coverImageLocalPath = not given cloudinary gives "" empty str
     const coverImage = await uploadOnCloudinary(coverImageLocalPath);
+
+    console.log(avatar)
+    console.log(coverImage)
 
     // check avatar upload
     if (!avatar) {
@@ -85,6 +104,8 @@ const registerUser = asyncHandler(async (req, res) => {
         username: username.toLowerCase()
     })
 
+    console.log(user)
+
     // 7. remove password & refresh token field from response
     // find user in mongoDb and unselect the selected fields with -sign
     const createdUser = await User.findById(user._id).select(
@@ -99,7 +120,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     // 9. return response
     return res.status(201).json(
-        new ApiResponse(200, createdUser, message="user registered successfully")
+        new ApiResponse(200, createdUser, "user registered successfully")
     )
 })
 

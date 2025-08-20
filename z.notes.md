@@ -281,3 +281,5 @@ http.createServer((req, res) => {
 <!-- import { User } from "../models/user.model.js"; -->
 <!-- import { uploadOnCloudinary } from "../utils/cloudinary.js"; -->
 <!-- import { ApiResponse } from "../utils/ApiResponse.js"; -->
+
+<!-- some bug fixes and postman setup for api testing -->
