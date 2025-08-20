@@ -25,11 +25,11 @@ const registerUser = asyncHandler(async (req, res) => {
 
     // 1. user detailfrom frontend/postman
     // express givess body access via req.body
-    const {username, fullname, email, password} = req.body
+    const {username, fullname, email, password} = req.body;
     console.log("username:", username, ", fullname:", fullname,", email:", email, ", password:", password);
 
-    console.log(req)
-    console.log(req.body)
+    // console.log(req)
+    console.log("reqBody", req.body)
 
     // 2. validation
     if ( 
@@ -71,9 +71,9 @@ const registerUser = asyncHandler(async (req, res) => {
     }
 
 
-    console.log(req.files)
-    console.log(req.files?.avatar[0])
-    console.log(req.files?.avatar[0]?.path)
+    console.log("reqFiles", req.files)
+    // console.log(req.files?.avatar[0])
+    // console.log(req.files?.avatar[0]?.path)
 
     if (!avatarLocalPath) {
         throw new ApiError(400, "avatar is required")
@@ -86,8 +86,8 @@ const registerUser = asyncHandler(async (req, res) => {
     // coverImageLocalPath = not given cloudinary gives "" empty str
     const coverImage = await uploadOnCloudinary(coverImageLocalPath);
 
-    console.log(avatar)
-    console.log(coverImage)
+    console.log("avatCldRes", avatar)
+    // console.log(coverImage)
 
     // check avatar upload
     if (!avatar) {
@@ -104,7 +104,7 @@ const registerUser = asyncHandler(async (req, res) => {
         username: username.toLowerCase()
     })
 
-    console.log(user)
+    console.log("user", user)
 
     // 7. remove password & refresh token field from response
     // find user in mongoDb and unselect the selected fields with -sign
