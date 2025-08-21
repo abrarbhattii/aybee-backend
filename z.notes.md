@@ -283,3 +283,9 @@ http.createServer((req, res) => {
 <!-- import { ApiResponse } from "../utils/ApiResponse.js"; -->
 
 <!-- some bug fixes and postman setup for api testing -->
+
+<!-- write login handler -->
+<!-- write generateAccessAndRefreshToken for login handler in user.controller.js -->
+<!-- write logout handler -->
+<!-- write auth.middleware (using jwt) for logout-->
+<!-- added secured routes in user.routes.js -->
