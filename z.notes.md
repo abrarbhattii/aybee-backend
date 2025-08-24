@@ -295,3 +295,13 @@ http.createServer((req, res) => {
 <!-- subscription schema -->
 <!-- channel is a user that has subscribers which are also users -->
 <!-- added subscription model -->
+<!-- write changeCurrentUserPassword handler -->
+<!-- write getCurrentUser handler -->
+<!-- write updateAccountdetails handler -->
+<!-- write updateUserAvatar handler-->
+<!-- updateUserCoverImage handler --> 
+
+
+<!-- Endpoint = "Specific URL and HTTP method" -->
+<!-- Controller = "Module grouping related request logic" -->
+<!-- Handler = "Function executing the request operation" -->
