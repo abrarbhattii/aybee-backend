@@ -289,3 +289,9 @@ http.createServer((req, res) => {
 <!-- write logout handler -->
 <!-- write auth.middleware (using jwt) for logout-->
 <!-- added secured routes in user.routes.js -->
+<!-- write refreshAccessToken in user.controller.js -->
+<!-- and write route for refreshAccessToken -->
+
+<!-- subscription schema -->
+<!-- channel is a user that has subscribers which are also users -->
+<!-- added subscription model -->
